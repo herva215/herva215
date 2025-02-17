@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Animation</title>
+    <title>Cloud Animation with Moving Text</title>
     <style>
         /* Set the full-screen size and remove default margins */
         body, html {
@@ -29,14 +29,15 @@
             animation: moveClouds 30s linear infinite;
         }
 
-        /* Text styling */
+        /* Welcome text styling */
         .welcome-text {
-            position: relative;
+            position: absolute;
             font-family: 'Arial', sans-serif;
             font-size: 3rem;
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: moveText 10s linear infinite;
             z-index: 1;
         }
 
@@ -44,6 +45,16 @@
         @keyframes moveClouds {
             0% {
                 transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Welcome text movement animation */
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
             }
             100% {
                 transform: translateX(-100%);
